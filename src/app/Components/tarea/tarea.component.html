@@ -1,1 +1,86 @@
-<p>tarea works!</p>
+
+<h1 style="margin: 20px 0px 0px 40px">Tareas pendientes</h1>
+<br>
+
+<div class="body">
+
+    <mat-card-content style="padding-bottom: 15px;">
+        <form [formGroup]="formularioBusqueda" (ngSubmit)="buscarPendientes()">
+          <div class="fechas">
+            <mat-form-field appearance="fill">
+              <mat-label>Fecha Inicial</mat-label>
+              <input matInput [matDatepicker]="picker1" formControlName="fechainic">
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+            
+            <mat-form-field appearance="fill">
+              <mat-label>Fecha Final</mat-label>
+              <input matInput [matDatepicker]="picker2" formControlName="fechafin">
+              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" type="submit">Buscar tareas con atraso</button>
+
+
+          </div>
+          
+  
+        </form>
+      </mat-card-content>
+
+      <mat-card-footer>
+        <mat-progress-bar mode="indeterminate" *ngIf="mostrarLoading"></mat-progress-bar>
+      </mat-card-footer>
+</div>
+
+<div *ngIf="tareas.length > 0" style="margin: 20px 0px;">
+  <p><strong>Total de tareas encontradas: {{ tareas.length }}</strong></p>
+</div>
+
+<div *ngIf="tareas.length > 0">
+    <table mat-table [dataSource]="tareas" class="mat-elevation-z8">
+      
+      <!-- Nombre Usuario Column -->
+      <ng-container matColumnDef="NombreUsuario">
+        <th mat-header-cell *matHeaderCellDef> Usuario </th>
+        <td mat-cell *matCellDef="let element"> {{element.NombreUsuario}} </td>
+      </ng-container>
+
+      <!-- Nombre Tarea Column -->
+      <ng-container matColumnDef="NombreTarea">
+        <th mat-header-cell *matHeaderCellDef> Tarea </th>
+        <td mat-cell *matCellDef="let element"> {{element.NombreTarea}} </td>
+      </ng-container>
+
+      <!-- Descripcion Column -->
+      <ng-container matColumnDef="Descripcion">
+        <th mat-header-cell *matHeaderCellDef> Descripción </th>
+        <td mat-cell *matCellDef="let element"> {{element.Descripcion}} </td>
+      </ng-container>
+
+      <!-- FechaInicio Column -->
+      <ng-container matColumnDef="FechaInicio">
+        <th mat-header-cell *matHeaderCellDef> Fecha Inicio </th>
+        <td mat-cell *matCellDef="let element"> {{element.FechaInicio | date:'yyyy-MM-dd'}} </td>
+      </ng-container>
+
+      <!-- EstadoTarea Column -->
+      <ng-container matColumnDef="EstadoTarea">
+        <th mat-header-cell *matHeaderCellDef> Estado </th>
+        <td mat-cell *matCellDef="let element"> {{element.EstadoTarea}} </td>
+      </ng-container>
+
+      <!-- DiasRetraso Column -->
+      <ng-container matColumnDef="DiasRetraso">
+        <th mat-header-cell *matHeaderCellDef> Días de Retraso </th>
+        <td mat-cell *matCellDef="let element"> {{element.DiasRetraso}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+
+

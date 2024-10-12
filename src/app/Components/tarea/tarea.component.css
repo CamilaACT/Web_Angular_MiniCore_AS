@@ -1,0 +1,24 @@
+table {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  th.mat-header-cell, td.mat-cell {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  mat-card {
+    margin: 20px;
+  }
+  
+  button {
+    margin-top: 20px;
+  }
+
+.fechas{
+  display: flex;
+  justify-content: space-between;
+  max-width: 800px;
+  margin-left: 40px;
+}

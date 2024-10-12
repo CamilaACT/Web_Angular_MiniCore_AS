@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { SharedModule } from './Reutilizable/shared/shared.module';
 import { TareaComponent } from './Components/tarea/tarea.component';
+import { provideHttpClient } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -16,6 +18,7 @@ import { TareaComponent } from './Components/tarea/tarea.component';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
+
     
   ],
   providers: [

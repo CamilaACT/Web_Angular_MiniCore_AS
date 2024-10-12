@@ -27,6 +27,10 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MomentDateModule } from '@angular/material-moment-adapter';
 
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
+
+
+
 @NgModule({
   declarations: [],
   imports: [
@@ -62,6 +66,8 @@ import { MomentDateModule } from '@angular/material-moment-adapter';
   providers:[
     MatDatepickerModule,
     MatNativeDateModule,
+    MatMomentDateModule,
+    provideHttpClient(withFetch()) 
   ]
 })
 export class SharedModule { }
