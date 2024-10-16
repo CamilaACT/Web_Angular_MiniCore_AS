@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { environment } from '../../enviroments/enviroment.prod';
+import { environment } from '../../environments/environment.prod';
 import { HttpClient } from '@angular/common/http';
 import { TareaFechas } from '../interfaces/tarea-fechas';
 import { Observable } from 'rxjs';
