@@ -32,9 +32,8 @@ Ejecuta `ng test` para ejecutar las pruebas unitarias a través de [Karma](https
 ## 5. Pruebas end-to-end
 
 Ejecuta `ng e2e` para ejecutar las pruebas end-to-end mediante la plataforma de tu elección. Para usar este comando, primero necesitas añadir un paquete que implemente capacidades de pruebas end-to-end.
-## 6. Pruebas end-to-end
 
-
+## 6. Deploy
 El deploy del proyecto se encuentra en:
 
 https://regal-hotteok-b7b9ef.netlify.app/
