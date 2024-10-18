@@ -9,9 +9,9 @@ Este proyecto fue desarrollado con [Angular CLI](https://github.com/angular/angu
 3. [Compilación](#compilación)
 4. [Pruebas unitarias](#pruebas-unitarias)
 5. [Pruebas end-to-end](#pruebas-end-to-end)
-6. [Conexión con la API backend](#conexión-con-la-api-backend)
-7. [Contribuciones](#contribuciones)
-8. [Licencia](#licencia)
+6. [Deploy](#deploy).
+7. [Conexión con la API backend](#conexión-con-la-api-backend)
+
 
 ## 1. Servidor de desarrollo
 
@@ -32,14 +32,28 @@ Ejecuta `ng test` para ejecutar las pruebas unitarias a través de [Karma](https
 ## 5. Pruebas end-to-end
 
 Ejecuta `ng e2e` para ejecutar las pruebas end-to-end mediante la plataforma de tu elección. Para usar este comando, primero necesitas añadir un paquete que implemente capacidades de pruebas end-to-end.
+## 6. Pruebas end-to-end
 
-## 6. Conexión con la API backend
 
-Este proyecto está diseñado para interactuar con una API backend desarrollada en ASP.NET Core. Asegúrate de que la API esté ejecutándose en un servidor antes de interactuar con ella desde la aplicación Angular. La configuración de las rutas para la API se puede ajustar en el archivo `environment.ts`:
+El deploy del proyecto se encuentra en:
+
+https://regal-hotteok-b7b9ef.netlify.app/
+
+## 7. Conexión con la API backend
+
+
+
+Este proyecto está diseñado para interactuar con una API backend desarrollada en ASP.NET Core. Asegúrate de que la API esté ejecutándose en un servidor antes de interactuar con ella desde la aplicación Angular. 
+
+
+
+La configuración de las rutas para la API se puede ajustar en el archivo `environment.ts`:
 
 ```typescript
 export const environment = {
   production: false,
   apiUrl: 'http://localhost:5000/api' // Cambiar a la URL de la API en producción
 };
+
+
 
